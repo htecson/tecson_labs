@@ -12,17 +12,16 @@ form.addEventListener("submit", async (event) => {
 
   const data = Object.fromEntries(new FormData(form).entries());
 
+  const payload = new URLSearchParams({
+    ...data,
+    submittedAt: new Date().toISOString(),
+    source: "Tecson Labs Website"
+  });
+
   try {
     const response = await fetch("https://hook.us2.make.com/878ozvlxz15bymo8fmkd54xtn2o7sd7g", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        ...data,
-        submittedAt: new Date().toISOString(),
-        source: "Tecson Labs Website"
-      })
+      body: payload
     });
 
     if (!response.ok) {
