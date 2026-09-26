@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecson Labs — Business Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="brand">TECSON LABS</div>
+      <div class="eyebrow">SMART SYSTEMS FOR SMALL BUSINESSES</div>
+      <h1>Turn repetitive work into <span>automatic systems.</span></h1>
+      <p class="lead">
+        We help businesses capture leads, follow up faster, organize inquiries,
+        and reduce repetitive admin work with simple automated workflows.
+      </p>
+
+      <div class="benefits">
+        <div class="benefit">
+          <div class="icon">01</div>
+          <div>
+            <strong>Save time</strong>
+            <span>Automate repetitive customer and admin tasks.</span>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="icon">02</div>
+          <div>
+            <strong>Respond faster</strong>
+            <span>Make sure new leads never sit unanswered.</span>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="icon">03</div>
+          <div>
+            <strong>Stay organized</strong>
+            <span>Keep customer information in one clear workflow.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <p class="mini">START HERE</p>
+        <h2>Tell us what you need</h2>
+        <p>Fill this out and we’ll review what can be automated.</p>
+      </div>
+
+      <form id="leadForm">
+        <div class="grid two">
+          <label>
+            <span>Full Name *</span>
+            <input type="text" name="fullName" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Business Name</span>
+            <input type="text" name="businessName" placeholder="Business or brand" />
+          </label>
+        </div>
+
+        <div class="grid two">
+          <label>
+            <span>Email Address *</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" placeholder="+1 604 000 0000" />
+          </label>
+        </div>
+
+        <label>
+          <span>What do you want help automating? *</span>
+          <select name="service" required>
+            <option value="" selected disabled>Select one</option>
+            <option>Lead Follow-Up</option>
+            <option>Appointment Reminders</option>
+            <option>Customer Inquiry Handling</option>
+            <option>Sales / Lead Tracking</option>
+            <option>Weekly Reports</option>
+            <option>Something Else</option>
+          </select>
+        </label>
+
+        <label>
+          <span>What currently takes up too much of your time? *</span>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Example: We manually reply to every inquiry and copy customer information into a spreadsheet..."
+            required
+          ></textarea>
+        </label>
+
+        <button type="submit">Submit Inquiry <span>→</span></button>
+        <p class="privacy">No spam. Your information is only used to respond to your inquiry.</p>
+      </form>
+
+      <div id="success" class="success hidden">
+        <div class="check">✓</div>
+        <h3>Inquiry received.</h3>
+        <p>Your information has been captured successfully.</p>
+        <button id="resetBtn" type="button" class="secondary">Send another</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
