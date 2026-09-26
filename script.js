@@ -7,6 +7,7 @@ form.addEventListener("submit", async (event) => {
 
   const submitButton = form.querySelector('button[type="submit"]');
   const originalText = submitButton.innerHTML;
+
   submitButton.disabled = true;
   submitButton.textContent = "Sending...";
 
@@ -19,14 +20,11 @@ form.addEventListener("submit", async (event) => {
   });
 
   try {
-    const response = await fetch("https://hook.us2.make.com/878ozvlxz15bymo8fmkd54xtn2o7sd7g", {
+    await fetch("https://hook.us2.make.com/55dtnfg61vldhc7v1wgru9iwi19iqj5y", {
       method: "POST",
+      mode: "no-cors",
       body: payload
     });
-
-    if (!response.ok) {
-      throw new Error("Submission failed");
-    }
 
     form.classList.add("hidden");
     success.classList.remove("hidden");
